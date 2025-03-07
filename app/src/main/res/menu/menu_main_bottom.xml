@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_message"
+        android:title="message"
+        android:icon="@drawable/ic_tab_message" />
+
+    <item
+        android:id="@+id/menu_contact"
+        android:title="contact"
+        android:icon="@drawable/ic_tab_contact" />
+    <item
+        android:id="@+id/menu_daily"
+        android:title="group"
+        android:icon="@drawable/ic_tab_group" />
+    <item
+        android:id="@+id/menu_mine"
+        android:title="mine"
+        android:icon="@drawable/ic_tab_mine" />
+</menu>
