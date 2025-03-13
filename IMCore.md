@@ -1260,7 +1260,7 @@ IMCoreManager.messageModule.sendMessage(
         )
 ```
 
--监听消息
+- 监听消息
 
 ```kotlin
 
