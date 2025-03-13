@@ -1,7 +1,5 @@
 package com.thinking.im.demo.repository
 
-
-
 object Host {
 
     fun endpointFor(type: String): String {
