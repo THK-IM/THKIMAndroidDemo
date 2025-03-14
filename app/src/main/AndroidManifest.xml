@@ -9,16 +9,16 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
+        android:name=".IMApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.THKIMAndroidDemo"
-        android:name=".IMApplication"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".ui.JavaWelcomeActivity"
@@ -31,7 +31,16 @@
 
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
+
+        <activity android:name=".ui.message.contact.ContactChatSettingActivity" />
+        <activity android:name=".ui.message.contact.ContactMessageActivity" />
+        <activity android:name=".ui.message.group.GroupMessageActivity" />
+        <activity android:name=".ui.message.group.GroupMemberListActivity" />
+        <activity android:name=".ui.message.group.GroupChatSettingActivity" />
+
+        <activity android:name=".ui.text.TextEditActivity" />
+
     </application>
 
 </manifest>

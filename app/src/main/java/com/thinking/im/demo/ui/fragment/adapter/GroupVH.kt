@@ -21,7 +21,7 @@ class GroupVH(liftOwner: LifecycleOwner, itemView: View) :
 
     fun onBind(group: Group) {
         displayAvatar(binding.ivAvatar, group.avatar)
-        binding.tvName.text = group.name
+        binding.tvNickname.text = group.name
         itemView.setOnClickListener {
             openSession(group.sessionId)
         }

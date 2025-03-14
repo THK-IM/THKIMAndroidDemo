@@ -10,7 +10,7 @@ import com.thk.im.android.core.IMCoreManager
 import com.thk.im.android.core.base.BaseSubscriber
 import com.thk.im.android.core.base.RxTransform
 import com.thk.im.android.core.db.entity.Group
-import com.thk.im.android.ui.base.BaseFragment
+import com.thinking.im.demo.ui.base.BaseFragment
 import com.thinking.im.demo.ui.fragment.adapter.GroupAdapter
 
 class GroupFragment : BaseFragment() {

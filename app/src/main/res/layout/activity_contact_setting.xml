@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tb_top"
+        layout="@layout/layout_toolbar_main" />
+
+    <RelativeLayout
+        android:id="@+id/ly_user_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="14dp"
+            android:src="@drawable/ic_array_right" />
+
+        <com.thinking.im.demo.ui.component.widget.BasisUserLayout
+            android:id="@+id/ly_user"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@id/iv_arrow"
+            android:paddingHorizontal="14dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_operate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.thinking.im.demo.ui.component.widget.SettingItemLayout
+            android:id="@+id/ly_remark"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="14dp" />
+
+        <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+            android:id="@+id/ly_top"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingHorizontal="14dp" />
+
+        <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+            android:id="@+id/ly_silence"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingHorizontal="14dp" />
+
+        <androidx.emoji2.widget.EmojiTextView
+            android:id="@+id/tv_follow"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#EA5151"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="#ECECEC" />
+
+        <androidx.emoji2.widget.EmojiTextView
+            android:id="@+id/tv_black"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
+            android:textColor="@color/third_text_color"
+            android:textSize="16sp" />
+
+        <androidx.emoji2.widget.EmojiTextView
+            android:id="@+id/tv_report"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="@color/third_text_color"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

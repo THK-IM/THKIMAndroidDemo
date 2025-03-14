@@ -10,3 +10,11 @@ enum class MemberApplyStatus(val value: Int) {
     Init(0), Reject(1), Accepted(2)
 }
 
+enum class UIEvent(var value: String) {
+
+    UserUpdate("UserUpdate"),
+    RelationUpdate("RelationUpdate"),
+    GroupUpdate("GroupUpdate")
+}
+
+const val ChatFunctionMemberPrivacy = 128L

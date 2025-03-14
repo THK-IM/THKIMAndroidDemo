@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tb_top"
+        layout="@layout/layout_toolbar_main" />
+
+    <RelativeLayout
+        android:id="@+id/ly_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.thinking.im.demo.ui.component.widget.MaxCountEditText
+            android:id="@+id/met_input"
+            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+        <androidx.emoji2.widget.EmojiTextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="@string/ensure_ok"
+            android:textColor="@color/primary_text_color"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

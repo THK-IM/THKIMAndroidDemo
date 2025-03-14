@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+        android:id="@+id/ly_top"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="14dp" />
+
+    <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+        android:id="@+id/ly_silence"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="14dp" />
+
+    <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+        android:id="@+id/ly_member_mute"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="14dp" />
+
+    <com.thinking.im.demo.ui.component.widget.SettingSwitchLayout
+        android:id="@+id/ly_member_privacy"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="14dp" />
+
+</LinearLayout>

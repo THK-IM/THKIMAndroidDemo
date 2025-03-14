@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.thinking.im.demo.databinding.ActivityWelcomeBinding
 import com.thinking.im.demo.module.im.IMManger
+import com.thinking.im.demo.repository.DataRepository
 import com.thinking.im.demo.ui.base.BaseActivity
 import com.thk.im.android.core.base.BaseSubscriber
 import com.thk.im.android.core.base.RxTransform
@@ -21,7 +22,9 @@ class WelcomeActivity : BaseActivity() {
                 initIMResult()
             }
         }
-        IMManger.initIMUser("3a2e0af2-d9f3-43c6-b8a0-ce5dcb503ad2", 12)
+        val token = "3a2e0af2-d9f3-43c6-b8a0-ce5dcb503ad2"
+        DataRepository.updateToken(token)
+        IMManger.initIMUser(token, 12)
             .compose(RxTransform.flowableToMain())
             .subscribe(subscriber)
         addDispose(subscriber)

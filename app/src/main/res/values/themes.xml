@@ -2,4 +2,37 @@
 <resources>
 
     <style name="Theme.THKIMAndroidDemo" parent="Theme.AppCompat.Light.NoActionBar" />
+
+
+
+    <!-- 自定义样式，指定弹出动画 -->
+    <style name="XDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowAnimationStyle">@style/XDialogAnimation</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+
+    <!-- 弹出动画 -->
+    <style name="XDialogAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/common_dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/common_dialog_exit_anim</item>
+    </style>
+
+    <!--实现BottomSheetDialog圆角效果-->
+    <style name="BottomSheetDialogStyle" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimAmount">0.2</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

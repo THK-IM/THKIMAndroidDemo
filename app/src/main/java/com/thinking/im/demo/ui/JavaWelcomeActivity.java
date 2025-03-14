@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.thinking.im.demo.databinding.ActivityWelcomeBinding;
 import com.thinking.im.demo.module.im.IMManger;
+import com.thinking.im.demo.repository.DataRepository;
 import com.thinking.im.demo.ui.base.BaseActivity;
 import com.thk.im.android.core.base.BaseSubscriber;
 import com.thk.im.android.core.base.RxTransform;
@@ -27,8 +28,9 @@ public class JavaWelcomeActivity extends BaseActivity {
                 initIMResult();
             }
         };
-
-        IMManger.INSTANCE.initIMUser("3a2e0af2-d9f3-43c6-b8a0-ce5dcb503ad2", 12)
+        String token = "3a2e0af2-d9f3-43c6-b8a0-ce5dcb503ad2";
+        DataRepository.INSTANCE.updateToken(token);
+        IMManger.INSTANCE.initIMUser(token, 12)
                 .compose(RxTransform.INSTANCE.flowableToMain())
                 .subscribe(subscriber);
         addDispose(subscriber);

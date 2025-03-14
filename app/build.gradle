@@ -53,6 +53,8 @@ dependencies {
     implementation "io.github.thk-im:provider:${rootProject.ext.android.libVersionName}"
     implementation "io.github.thk-im:core:${rootProject.ext.android.libVersionName}"
 
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
+    implementation 'io.github.scwang90:refresh-header-classics:2.1.0'    //经典刷新头
 
     implementation rootProject.ext.dependencies["rxjava"]
     implementation rootProject.ext.dependencies["rxandroid"]
