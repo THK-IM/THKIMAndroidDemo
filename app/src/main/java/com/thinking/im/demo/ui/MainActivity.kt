@@ -2,11 +2,12 @@ package com.thinking.im.demo.ui
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.Window
+import android.view.WindowManager
 import androidx.core.view.get
 import com.thinking.im.demo.databinding.ActivityMainBinding
 import com.thinking.im.demo.ui.base.BaseActivity
 import com.thk.im.android.core.IMCoreManager
-import com.thk.im.android.core.api.vo.CodeMessage
 import com.thk.im.android.core.base.BaseSubscriber
 import com.thk.im.android.core.base.RxTransform
 import com.thk.im.android.core.db.entity.Session
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
         val adapter = MainFragmentAdapter(this)
         binding.vpContainer.adapter = adapter
         binding.vpContainer.isUserInputEnabled = false

@@ -36,6 +36,7 @@
         <activity android:name=".ui.message.contact.ContactChatSettingActivity" />
         <activity android:name=".ui.message.contact.ContactMessageActivity" />
         <activity android:name=".ui.message.group.GroupMessageActivity" />
+        <activity android:name=".ui.message.group.CreateGroupActivity" />
         <activity android:name=".ui.message.group.GroupMemberListActivity" />
         <activity android:name=".ui.message.group.GroupChatSettingActivity" />
 

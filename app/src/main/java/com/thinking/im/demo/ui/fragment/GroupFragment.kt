@@ -6,19 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.thinking.im.demo.databinding.FragmentGroupBinding
+import com.thinking.im.demo.ui.base.BaseFragment
+import com.thinking.im.demo.ui.fragment.adapter.GroupAdapter
 import com.thk.im.android.core.IMCoreManager
 import com.thk.im.android.core.base.BaseSubscriber
 import com.thk.im.android.core.base.RxTransform
 import com.thk.im.android.core.db.entity.Group
-import com.thinking.im.demo.ui.base.BaseFragment
-import com.thinking.im.demo.ui.fragment.adapter.GroupAdapter
 
 class GroupFragment : BaseFragment() {
 
     private lateinit var binding: FragmentGroupBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         binding = FragmentGroupBinding.inflate(
             inflater, container, false
@@ -31,10 +31,10 @@ class GroupFragment : BaseFragment() {
         val adapter = GroupAdapter(this)
         binding.rcvGroup.layoutManager = LinearLayoutManager(context)
         binding.rcvGroup.adapter = adapter
-        queryAllContacts()
+        queryAllGroups()
     }
 
-    private fun queryAllContacts() {
+    private fun queryAllGroups() {
         val subscriber = object : BaseSubscriber<List<Group>>() {
             override fun onNext(t: List<Group>?) {
                 t?.let {
