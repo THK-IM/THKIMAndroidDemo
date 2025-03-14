@@ -1,11 +1,13 @@
 package com.thinking.im.demo.module.im
 
 import android.app.Application
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import com.thinking.im.demo.utils.withAlpha
 import com.thk.im.android.core.base.utils.AppUtils
 import com.thk.im.android.core.base.utils.ShapeUtils
+import com.thk.im.android.core.base.utils.ToastUtils
 import com.thk.im.android.core.db.entity.Message
 import com.thk.im.android.core.db.entity.Session
 import com.thk.im.android.core.db.entity.User
@@ -70,6 +72,10 @@ class IMResourceProvider(private val app: Application) : IMUIResourceProvider {
 
     override fun panelBgColor(): Int {
         return Color.parseColor("#FFFFFF")
+    }
+
+    override fun showToast(context: Context, toast: String) {
+        ToastUtils.showShort(toast)
     }
 
     override fun layoutBgColor(): Int {
