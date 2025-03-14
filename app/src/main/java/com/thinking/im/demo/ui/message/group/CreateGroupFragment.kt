@@ -18,7 +18,6 @@ import com.thk.im.android.core.base.BaseSubscriber
 import com.thk.im.android.core.base.RxTransform
 import com.thk.im.android.core.base.extension.setShape
 import com.thk.im.android.core.db.entity.Session
-import com.thk.im.android.core.event.XEventBus
 
 class CreateGroupFragment : BaseFragment() {
 
@@ -45,8 +44,6 @@ class CreateGroupFragment : BaseFragment() {
             floatArrayOf(21f, 21f, 21f, 21f),
             false
         )
-        binding.tvOk.alpha = 0.5f
-        binding.tvOk.isClickable = false
         binding.tvOk.setOnClickListener {
             submit()
         }
