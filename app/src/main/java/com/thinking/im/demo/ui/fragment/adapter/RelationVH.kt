@@ -21,8 +21,6 @@ class RelationVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(pair: Pair<Contact, BasisUserVo>) {
         this.pair = pair
         binding.lyUser.setUserInfo(pair.second)
-        binding.lyUser.hideId(false)
-        binding.lyUser.hideLevel(true)
         if (pair.first.relation.and(ContactRelation.Black.value) != 0) {
             binding.tvRelationOpr.setShapeWithStroke(
                 Color.TRANSPARENT,

@@ -16,13 +16,34 @@ object ApiFactory {
     private const val keepAliveDuration: Long = 60
 
     private lateinit var interceptor: APITokenInterceptor
+    private lateinit var tokenInterceptor: TokenInterceptor
     private lateinit var okHttpClient: OkHttpClient
+    private lateinit var okHttpClient1: OkHttpClient
     private lateinit var app: Application
     lateinit var uploadHttpClient: OkHttpClient
 
     fun init(application: Application, token: String) {
         app = application
         interceptor = APITokenInterceptor(token)
+        okHttpClient = OkHttpClient.Builder()
+            .connectTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .writeTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .readTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
+            .addInterceptor(interceptor)
+            .connectionPool(ConnectionPool(maxIdleConnection, keepAliveDuration, TimeUnit.SECONDS))
+            .build()
+
+        tokenInterceptor = TokenInterceptor(token)
+        okHttpClient1 = OkHttpClient.Builder()
+            .connectTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .writeTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .readTimeout(defaultTimeout, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
+            .addInterceptor(tokenInterceptor)
+            .connectionPool(ConnectionPool(maxIdleConnection, keepAliveDuration, TimeUnit.SECONDS))
+            .build()
+
         okHttpClient = OkHttpClient.Builder()
             .connectTimeout(defaultTimeout, TimeUnit.SECONDS)
             .writeTimeout(defaultTimeout, TimeUnit.SECONDS)
@@ -43,18 +64,29 @@ object ApiFactory {
 
     fun updateToken(token: String) {
         interceptor.updateToken(token)
+        tokenInterceptor.updateToken(token)
     }
 
 
-    fun <T> createApi(cls: Class<T>, serverUrl: String): T {
-        interceptor.addValidEndpoint(serverUrl)
-        val retrofit = Retrofit.Builder()
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .baseUrl(serverUrl)
-            .build()
-        return retrofit.create(cls)
+    fun <T> createApi(cls: Class<T>, serverUrl: String, enableCipher: Boolean = true): T {
+        if (enableCipher) {
+            interceptor.addValidEndpoint(serverUrl)
+            val retrofit = Retrofit.Builder()
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(serverUrl)
+                .build()
+            return retrofit.create(cls)
+        } else {
+            val retrofit = Retrofit.Builder()
+                .client(okHttpClient1)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(serverUrl)
+                .build()
+            return retrofit.create(cls)
+        }
     }
 
 }

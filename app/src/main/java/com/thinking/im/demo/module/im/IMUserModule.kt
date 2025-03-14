@@ -9,8 +9,10 @@ import io.reactivex.Flowable
 class IMUserModule : DefaultUserModule() {
     override fun queryServerUser(id: Long): Flowable<User> {
         return DataRepository.userApi.queryUsers("$id").flatMap {
-            val user = it.users[id]!!.toUser()
-            IMCoreManager.getImDataBase().userDao().insertOrReplace(listOf(user))
+            val user = it.users["$id"]?.toUser()
+            user?.let {
+                IMCoreManager.getImDataBase().userDao().insertOrReplace(listOf(user))
+            }
             return@flatMap Flowable.just(user)
         }
     }

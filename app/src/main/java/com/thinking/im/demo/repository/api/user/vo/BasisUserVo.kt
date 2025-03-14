@@ -10,40 +10,25 @@ import kotlinx.parcelize.Parcelize
 open class BasisUserVo(
     @SerializedName("id")
     val id: Long,
-    @SerializedName("display_id")
-    var displayId: String,
-    @SerializedName("vip_level")
-    var vipLevel: Int,
     @SerializedName("nickname")
     var nickname: String?,
     @SerializedName("avatar")
     var avatar: String?,
     @SerializedName("sex")
     var sex: Int?,
-    @SerializedName("is_auth")
-    var isAuth: Int?,
-    @SerializedName("bg_url")
-    var bgUrl: String?,
-    @SerializedName("signature")
-    var signature: String?,
 ) : Parcelable {
 
     companion object {
         fun fromUser(user: User): BasisUserVo {
-            val vipLevel = 0
-            val isAuth = 0
-            val bgUrl: String? = null
-            val signature: String? = null
             return BasisUserVo(
-                user.id, user.displayId, vipLevel, user.nickname,
-                user.avatar, user.sex, isAuth, bgUrl, signature
+                user.id, user.nickname, user.avatar, 0,
             )
         }
     }
 
     fun toUser(): User {
         val now = IMCoreManager.severTime
-        return User(id, displayId, nickname ?: "", avatar, sex, null, null, now, now)
+        return User(id, "", nickname ?: "", avatar, sex, null, null, now, now)
     }
 
 

@@ -7,5 +7,5 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class QueryUsersRes(
     @SerializedName("users")
-    val users: Map<Long, BasisUserVo>,
+    val users: Map<String, BasisUserVo>,
 ) : Parcelable

@@ -7,7 +7,11 @@ object Host {
         if (debug) {
             return when (type) {
                 "user" -> {
-                    "http://206.238.114.18:20000"
+                    "https://www.ccoin.life"
+                }
+
+                "demo" -> {
+                    "http://206.238.114.18:25000"
                 }
 
                 "msg" -> {
@@ -23,7 +27,11 @@ object Host {
         } else {
             return when (type) {
                 "user" -> {
-                    "http://206.238.114.18:20000"
+                    "https://www.ccoin.life"
+                }
+
+                "demo" -> {
+                    "http://206.238.114.18:25000"
                 }
 
                 "msg" -> {

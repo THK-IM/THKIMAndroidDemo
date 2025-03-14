@@ -35,9 +35,6 @@ class GroupMemberVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val vo = this.vo ?: return@setOnClickListener
             listener?.onClick(vo, "more", binding.lyUser)
         }
-
-        binding.lyUser.hideId(false)
-        binding.lyUser.hideLevel(true)
     }
 
     fun bind(vo: Pair<SessionMember, User>, myRole: Int) {

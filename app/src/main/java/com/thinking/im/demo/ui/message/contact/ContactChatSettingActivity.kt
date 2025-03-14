@@ -200,8 +200,6 @@ class ContactChatSettingActivity : BaseRelationActivity() {
     private fun updateUserView() {
         val user = user() ?: return
         binding.lyUser.setUserInfo(BasisUserVo.fromUser(user))
-        binding.lyUser.hideLevel(true)
-        binding.lyUser.hideId(false)
     }
 
     private fun updateContactView() {

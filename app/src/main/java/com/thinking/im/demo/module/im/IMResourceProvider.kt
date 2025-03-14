@@ -73,11 +73,11 @@ class IMResourceProvider(private val app: Application) : IMUIResourceProvider {
     }
 
     override fun layoutBgColor(): Int {
-        return Color.parseColor("#EEEEEE")
+        return Color.parseColor("#F2F2F2")
     }
 
     override fun inputBgColor(): Int {
-        return Color.parseColor("#FFFFFF")
+        return Color.parseColor("#F2F2F2")
     }
 
     override fun inputTextColor(): Int {

@@ -25,14 +25,4 @@ class IMBaseMessageFragment : IMMessageFragment() {
     override fun showMessage(text: String, success: Boolean) {
         (requireActivity() as? BaseMessageActivity)?.showToast(text)
     }
-
-    override fun onMsgClick(msg: Message, position: Int, originView: View) {
-//        if (msg.type == MarsMsgType.GroupMemberApply.value) {
-//            val body = msg.content ?: return
-//            val groupMemberApplyVo = Gson().fromJson(body, GroupMemberApplyVo::class.java)
-//            FamilyMemberReviewActivity.start(requireActivity(), groupMemberApplyVo)
-//        } else {
-        super.onMsgClick(msg, position, originView)
-//        }
-    }
 }
